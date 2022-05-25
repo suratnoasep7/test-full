@@ -53,7 +53,7 @@ class ProductController extends Controller
             );
         }
 
-        return redirect()->route('admin.product.index');
+        return redirect()->route('admin.product.index')->with('message','Data Added Successfully');
     }
 
     public function edit($id)
@@ -98,7 +98,7 @@ class ProductController extends Controller
                 );
             }
         }
-        return redirect()->route('admin.product.index');
+        return redirect()->route('admin.product.index')->with('message','Data Updated Successfully');
     }
 
     public function show(Product $product)
@@ -116,7 +116,7 @@ class ProductController extends Controller
 
         $product->delete();
 
-        return back();
+        return redirect()->route('admin.product.index')->with('message','Data Deleted Successfully');
     }
 
     public function massDestroy(MassDestroyProductRequest $request)

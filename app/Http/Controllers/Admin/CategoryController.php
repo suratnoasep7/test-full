@@ -37,7 +37,7 @@ class CategoryController extends Controller
 
         $category = Category::create($request->validated());
         
-        return redirect()->route('admin.category.index');
+        return redirect()->route('admin.category.index')->with('message','Data Added Successfully');
     }
 
     public function edit($id)
@@ -56,7 +56,7 @@ class CategoryController extends Controller
     {
         $category->update($request->validated());
 
-        return redirect()->route('admin.category.index');
+        return redirect()->route('admin.category.index')->with('message','Data Updated Successfully');
     }
 
     public function show(Category $category)
@@ -72,7 +72,7 @@ class CategoryController extends Controller
 
         $category->delete();
 
-        return back();
+        return redirect()->route('admin.category.index')->with('message','Data Deleted Successfully');
     }
 
     public function massDestroy(MassDestroyCategoryRequest $request)
