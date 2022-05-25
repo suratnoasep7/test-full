@@ -24,6 +24,14 @@
             </a>
         </li>
         <li class="c-sidebar-nav-item">
+            <a href="{{ route("admin.product.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/product") || request()->is("admin/product/*") ? "c-active" : "" }}">
+                <i class="fa-fw fas fa-bookmark c-sidebar-nav-icon">
+
+                </i>
+                {{ trans('cruds.product.title') }}
+            </a>
+        </li>
+        <li class="c-sidebar-nav-item">
             <a href="#" class="c-sidebar-nav-link" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
                 <i class="c-sidebar-nav-icon fas fa-fw fa-sign-out-alt">
 
