@@ -1,12 +1,18 @@
 @extends('layouts.admin')
-@section('content')
 
+@section('styles')
 <style type="text/css">
+    .img-responsive {
+        width: 64px;
+        height: 64px;
+    }
     .table td, .table th {
         width: 50%;
     }
 </style>
+@endsection
 
+@section('content')
 <div class="card">
     <div class="card-header">
         {{ trans('global.show') }} {{ trans('cruds.category.title') }}
